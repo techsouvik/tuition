@@ -27,7 +27,10 @@
             background-color: #03e079;
             color: white;
         }
-          
+        input[type="text"]
+        {
+            font-size:24px;
+        }  
     </style>
     <script>
         var m=0;
@@ -68,7 +71,8 @@
     <table bordercolor='black' cellspacing='2' cellpadding='10' width='40%' height='60%' align='center' border='2' onload="clr()">
 
     <tr>
-        <td colspan='4'><center><input type="text" name="t1" id="c1" value="" size="80"></center></td>
+        <td colspan='4'><center><input type="text" name="t1" id="c1" value="" size="40"></center></td>
+        
     </tr>
     <tr>
         <td><input type="button" id="b" value="7" onclick="s(7)" class="bn3"></td>
@@ -98,8 +102,11 @@
     <tr>
         <td><input type="button" id="b" value="clr" onclick="clr()" class="bn2"></td>
         <td><input type="button" id="b" value="root" onclick="root('r')" class="bn2"></td>
-        <td><input type="button" id="b" value="log e" onclick="root('l10')" class="bn2"></td>
-        <td><input type="button" id="b" value="log 10" onclick="root('le')" class="bn2"></td>
+        <td><center><span id="normal"><input type="button" id="b" value="Normal" class="bn2"></span></center></td>
+        <td><center><span id="scientific"><input type="button" id="b" value="Scientific" class="bn2"></span></center></td>
+       <!---<td><input type="button" id="b" value="log e" onclick="root('l10')" class="bn2"></td>
+            <td><input type="button" id="b" value="log 10" onclick="root('le')" class="bn2"></td>
+       -->
     </tr>
     </table>
 </body>
