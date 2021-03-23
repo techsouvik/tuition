@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        
+        .bn1 {border: 2px solid #37c001;transition-duration: 0.4s;}
+        .bn2 {border: 2px solid #030a68;transition-duration: 0.4s;} 
+        .bn3 {border: 2px solid #a00000;transition-duration: 0.4s;}
+        #b{
+            
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+        }
+        #b:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        #b:hover {
+            background-color: #03e079;
+            color: white;
+        }
+          
+    </style>
     <script>
         var m=0;
         function s(n){
@@ -11,50 +39,67 @@
             document.getElementById("c1").value = "" 
         } 
         function solve(){
-            x=document.getElementById("c1").value ;
+            x=document.getElementById("c1").value;
             y=eval(x); 
-            document.getElementById("c1").value = y;
+            document.getElementById("c1").value=y;
+        }
+        function root(n){
+            x=document.getElementById("c1").value;
+            y=eval(x);
+            switch(n){
+            case 'r': m=Math.sqrt(y);
+                    break;
+            case 'l10': m=Math.log(y);
+                    break;
+            case 'le': m=Math.log10(y);
+                    break;
+            }
+            document.getElementById("c1").value=m;
         }
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is a Calculator">
     <title>Calculator</title>
 </head>
 <body>
     <h1 align="center">Calculator</h1>
-    <table bordercolor='black' cellspacing='2' cellpadding='10' width='60%' align='center' border='2' onload="clr()">
+    <table bordercolor='black' cellspacing='2' cellpadding='10' width='40%' height='60%' align='center' border='2' onload="clr()">
 
     <tr>
-        <td colspan='3'><input type="text" name="t1" id="c1" value=""></td>
+        <td colspan='4'><center><input type="text" name="t1" id="c1" value="" size="80"></center></td>
     </tr>
     <tr>
-        <td><input type="button" id="b7" value="7" onclick="s(7)"></td>
-        <td><input type="button" id="b8" value="8" onclick="s(8)"></td>
-        <td><input type="button" id="b9" value="9" onclick="s(9)"></td>
-        <td><input type="button" id="b40" value="+" onclick="s('+')"></td>
+        <td><input type="button" id="b" value="7" onclick="s(7)" class="bn3"></td>
+        <td><input type="button" id="b" value="8" onclick="s(8)" class="bn3"></td>
+        <td><input type="button" id="b" value="9" onclick="s(9)" class="bn3"></td>
+        <td><input type="button" id="b" value="+" onclick="s('+')" class="bn1"></td>
 
     </tr>
     <tr>
-        <td><input type="button" id="b4" value="4" onclick="s(4)"></td>
-        <td><input type="button" id="b5" value="5" onclick="s(5)"></td>
-        <td><input type="button" id="b6" value="6" onclick="s(6)"></td>
-        <td><input type="button" id="b41" value="-" onclick="s('-')"></td>
+        <td><input type="button" id="b" value="4" onclick="s(4)" class="bn3"></td>
+        <td><input type="button" id="b" value="5" onclick="s(5)" class="bn3"></td>
+        <td><input type="button" id="b" value="6" onclick="s(6)" class="bn3"></td>
+        <td><input type="button" id="b" value="-" onclick="s('-')" class="bn1"></td>
     </tr>
     <tr>
-        <td><input type="button" id="b1" value="1" onclick="s(1)"></td>
-        <td><input type="button" id="b2" value="2" onclick="s(2)"></td>
-        <td><input type="button" id="b3" value="3" onclick="s(3)"></td>
-        <td><input type="button" id="b42" value="*" onclick="s('*')"></td>
+        <td><input type="button" id="b" value="1" onclick="s(1)" class="bn3"></td>
+        <td><input type="button" id="b" value="2" onclick="s(2)" class="bn3"></td>
+        <td><input type="button" id="b" value="3" onclick="s(3)" class="bn3"></td>
+        <td><input type="button" id="b" value="*" onclick="s('*')" class="bn1"></td>
     </tr>
     <tr>
-        <td><input type="button" id="b0" value="0" onclick="s(0)"></td>
-        <td><input type="button" id="b44" value="." onclick="s('.')"></td>
-        <td><input type="button" id="beq" value="=" onclick="solve()"></td>
-        <td><input type="button" id="b43" value="/" onclick="s('/')"></td>
+        <td><input type="button" id="b" value="." onclick="s('.')" class="bn2"></td>
+        <td><input type="button" id="b" value="0" onclick="s(0)" class="bn3"></td>
+        <td><input type="button" id="b" value="=" onclick="solve()" class="bn2"></td>
+        <td><input type="button" id="b" value="/" onclick="s('/')" class="bn1"></td>
     </tr>
     <tr>
-        <td><input type="button" id="b100" value="clr" onclick="clr()"></td>
+        <td><input type="button" id="b" value="clr" onclick="clr()" class="bn2"></td>
+        <td><input type="button" id="b" value="root" onclick="root('r')" class="bn2"></td>
+        <td><input type="button" id="b" value="log e" onclick="root('l10')" class="bn2"></td>
+        <td><input type="button" id="b" value="log 10" onclick="root('le')" class="bn2"></td>
     </tr>
     </table>
 </body>
