@@ -56,6 +56,10 @@
                     break;
             case 'le': m=Math.log10(y);
                     break;
+            case 'si': m=Math.sin(y);
+                    break;
+            case 'co': m=Math.cos(y);
+                    break;
             }
             document.getElementById("c1").value=m;
         }
@@ -108,8 +112,9 @@
     <tr>
         <td><input type="button" id="b" value="log e" onclick="root('l10')" class="bn2"></td>
         <td><input type="button" id="b" value="log 10" onclick="root('le')" class="bn2"></td>
-       
+        <td><input type="button" id="b" value="sin x" onclick="root('si')" class="bn2"></td>
+        <td><input type="button" id="b" value="cos x" onclick="root('co')" class="bn2"></td>
     </tr>
-    </table>
+  </table>
 </body>
 </html>
